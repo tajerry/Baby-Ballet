@@ -1,0 +1,25 @@
+{
+    "comments": [
+        {
+            "id": 1,
+            "image": "./alexandra.png",
+            "name": "Alexandra laurent",
+            "profession": "Dance Instructor",
+            "content": "Great learning platform for those \n who are starting out as a dancer.  "
+        },
+        {
+            "id": 2,
+            "image": "./robert.png",
+            "name": "Robert Lopez",
+            "profession": "Broadway Dancer",
+            "content": " This was one of the best learning \n \n experiences I’ve ever had. The teachers \n \n were friendly and gave me great advice."
+        },
+        {
+            "id": 3,
+            "image": "./allen.png",
+            "name": "Allen King",
+            "profession": "Choregrapher",
+            "content":  "I’ve learned a Variety of new things \n that helped me a lot in my career\n as a choregrapher."
+        }
+    ]
+}

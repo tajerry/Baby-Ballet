@@ -1,0 +1,111 @@
+.register{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 10%;
+    background: linear-gradient(225.29deg, rgba(85, 84, 157, 0.2) -0.491%,rgba(18, 11, 44, 0.16) 100%);
+    background-color: #161617;
+    padding-bottom: 10%;
+}
+.register__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    width: 562px;
+    height: 310px;
+    padding-left: 1%;
+}
+.register__infoHeader{
+    color: rgb(192, 191, 196);
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 45px;
+    letter-spacing: 15%;
+    text-align: left;
+    text-transform: uppercase;
+}
+.register__infoContent{
+    width: 600px;
+    display: flex;
+    align-items: center;
+    color: rgb(192, 191, 196);
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: uppercase;
+}
+.register__img{
+    padding-right: 3%;
+}
+.register__form{
+    width: 575px;
+    height: 856px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.register__formHeader{
+    color: rgb(192, 191, 196);
+    font-family: Poppins;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 75px;
+    letter-spacing: 15%;
+    text-align: left;
+    text-transform: uppercase;
+}
+.cregister__formInput{
+    width: 575px;
+    height: 80px;
+    border-radius: 9px;
+    background: rgb(61, 70, 81);
+    color: rgb(192, 191, 196);
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: capitalize;
+    padding-left: 10%;
+    margin-bottom: 7%;
+}
+.register__formTextarea{
+    width: 575px;
+    height: 341px;
+    border-radius: 9px;
+    background: rgb(61, 70, 81);
+    color: rgb(192, 191, 196);
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: capitalize;
+    padding-top: 2%;
+    padding-left: 10%;
+}
+.register__formButton{
+    width: 640px;
+    height: 80px;
+    background: rgb(85, 84, 157);
+    color: rgb(192, 191, 196);
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 15%;
+    text-align: left;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 7%;
+}
