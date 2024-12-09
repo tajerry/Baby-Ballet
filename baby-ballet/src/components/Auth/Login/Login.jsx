@@ -1,23 +1,28 @@
 import { Grid } from "@mui/material";
-import {useContext, useEffect, useState} from "react";
+import {useContext} from "react";
 import { Button, Form, Input } from "antd";
 import {useNavigate} from "react-router-dom";
 import {UserContext} from "../../Context/UserContextProvider";
 function Login() {
     let {user, setUser }  = useContext(UserContext);
     const navigate = useNavigate();
-    console.log(user);
   const login = (value) => {
-    setUser({
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: value.email,
-        isAuth: true,
-        password: value.password,
-        phone: user.phone
+      if(value.password === user.password && value.email === user.email){
+          setUser({
+              firstName: user.firstName,
+              lastName: user.lastName,
+              email: value.email,
+              isAuth: true,
+              password: value.password,
+              phone: user.phone
 
-    });
-    navigate('/user')
+          });
+          navigate('/user')
+      }
+      else {
+          alert("Вы ввели неправильный пароль!")
+      }
+
   };
   return (
     <Grid className={"register"} id={"register"} align={"center"} container>
@@ -42,7 +47,7 @@ function Login() {
           </Form.Item>
           />
           <Button className={"contactUs__formButton"} htmlType="submit">
-            Submit
+            Войти
           </Button>
         </Form>
       </Grid>

@@ -3,12 +3,20 @@ import { Button, Form, Input } from "antd";
 import {useContext, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {UserContext} from "../../Context/UserContextProvider";
+import {useCreateUserMutation} from "../../../store/services/usersApi";
 
 function Register() {
   const navigate = useNavigate();
     let {user, setUser }  = useContext(UserContext);
+    const [createUser] = useCreateUserMutation();
   const register = (data) => {
-    setUser((prevState) => (prevState = data));
+      createUser({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          password: data.password,
+          phone: data.phone,
+      });
     navigate('/login')
   };
   return (
@@ -61,7 +69,7 @@ function Register() {
           />
         </Form.Item>
         <Button className={"contactUs__formButton"} htmlType="submit">
-          Submit
+          Зарегистрироваться
         </Button>
       </Form>
     </div>
