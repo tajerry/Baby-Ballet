@@ -17,7 +17,7 @@
     letter-spacing: 15%;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 }
 .whatClientsSay{
     color: rgb(255, 255, 255);
@@ -28,5 +28,4 @@
     letter-spacing: 0%;
     text-align: left;
     text-transform: capitalize;
-    margin-bottom: 10%;
 }

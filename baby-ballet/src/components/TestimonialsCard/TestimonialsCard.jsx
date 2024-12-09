@@ -4,7 +4,7 @@ import './TestimonialsCard.css'
 function TestimonialsCard(props){
     return(
         <div className={'testimonialsCard'}>
-            <img className={'testimonialsCard__img'} src={props.img} alt=""/>
+            <img className={'testimonialsCard__img'} src={props.image} alt=""/>
             <div className="testimonialsCard__name">{props.name}</div>
             <div className="testimonialsCard__profession">{props.profession}</div>
             <div className="testimonialsCard__content">{props.content}</div>
