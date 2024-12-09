@@ -1,0 +1,36 @@
+{
+    "classes": [
+        {
+            "id": 1,
+            "image": "/white.png",
+            "header": "Классический балет",
+            "level": "Начальный",
+            "price": "$54/час",
+            "rating": 4
+        },
+        {
+            "id": 2,
+            "image": "/street.png",
+            "header": "Уличные танцы",
+            "level": "Средний",
+            "price": "$44/час",
+            "rating": 2
+        },
+        {
+            "id": 3,
+            "image": "/contemporary.png",
+            "header": "Народные танцы",
+            "level": "Продвинутый",
+            "price": "$59/час",
+            "rating": 5
+        },
+        {
+            "id": 4,
+            "image": "/balroom.png",
+            "header": "Бальные танцы",
+            "level": "Начальный",
+            "price": "$78/час",
+            "rating": 3
+        }
+    ]
+}

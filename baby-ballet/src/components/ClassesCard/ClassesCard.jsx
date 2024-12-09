@@ -10,13 +10,13 @@ function ClassesCard(props) {
             <div className="card__content">
                 <div className="card__header">{props.header}</div>
                 <div className="card__level">{props.level}</div>
-                <Rating name="half-rating" defaultValue={3} precision={1} />
+                <Rating name="half-rating" defaultValue={props.rating} precision={1} />
                 <div className="card__feesPrice">
-                    <p className={'card__fees'}>FEES</p>
+                    <p className={'card__fees'}>Стоимость</p>
                     <p className={'card__price'}>{props.price}</p>
                 </div>
                 <NavLink to={'/contact'}>
-                    <button className="card__button">ENROLL NOW</button>
+                    <button className="card__button">Записаться сейчас</button>
                 </NavLink>
             </div>
         </div>

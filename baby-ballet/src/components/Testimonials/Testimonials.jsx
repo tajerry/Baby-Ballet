@@ -18,6 +18,7 @@ function Testimonials() {
               name={comment.name}
               profession={comment.profession}
               content={comment.content}
+              rating={comment.rating}
             />
           </Grid>
         ))}

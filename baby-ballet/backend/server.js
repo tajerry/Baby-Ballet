@@ -5,9 +5,10 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5002;
 const COMMENTS_DB_PATH = path.join(__dirname, "./db/db.comments.json");
+const CLASSES_DB_PATH = path.join(__dirname, "./db/db.classes.json");
 const corsOptions = {
     credentials: true,
-    origin: 'http://localhost:3000',  // сменил на http://<имя моего домена>
+    origin: 'http://localhost:3000',
     allowedHeaders: ['Content-Type'],
     optionsSuccessStatus: 200
 };
@@ -29,5 +30,16 @@ app.get("/api/comment", (req, res) => {
         }
         const comments = JSON.parse(data).comments;
         res.json(comments);
+    });
+});
+app.get("/api/classes", (req, res) => {
+    fs.readFile(CLASSES_DB_PATH, "utf8", (err, data) => {
+        if (err) {
+            console.error("Ошибка чтения файла:", err);
+            res.status(500).send("Ошибка сервера");
+            return;
+        }
+        const classes = JSON.parse(data).classes;
+        res.json(classes);
     });
 });
