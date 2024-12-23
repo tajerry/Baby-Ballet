@@ -15,7 +15,15 @@ export const usersApi = createApi({
                 },
                 invalidatesTags:["USERS"]
             }),
+            getAllUsers:builder.query({
+                query:() =>{
+                    return{
+                        url:'/users',
+                        method: 'GET',
+                    }
+                }
+            })
         };
     },
 });
-export const { useCreateUserMutation} = usersApi;
+export const { useCreateUserMutation, useGetAllUsersQuery} = usersApi;

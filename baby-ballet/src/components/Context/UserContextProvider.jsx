@@ -2,7 +2,7 @@ import {createContext, useState} from "react";
 
 
 const UserContext = createContext({
-    user: {
+    contextUser: {
         name: "",
         email: "",
         isAuth: false,
@@ -10,7 +10,7 @@ const UserContext = createContext({
     setUser: () => {},
 });
 function UserContextProvider({children}){
-    const [user, setUser] = useState({
+    const [contextUser, setUser] = useState({
         firstName: "",
         lastName: '',
         phone: 0,
@@ -21,7 +21,7 @@ function UserContextProvider({children}){
     return(
         <UserContext.Provider
         value={{
-            user,
+            contextUser,
             setUser
         }}>
             {children}

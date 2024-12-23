@@ -6,6 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 5002;
 const COMMENTS_DB_PATH = path.join(__dirname, "./db/db.comments.json");
 const CLASSES_DB_PATH = path.join(__dirname, "./db/db.classes.json");
+const USERS_DB_PATH = path.join(__dirname, "./db/db.users.json");
 const corsOptions = {
     credentials: true,
     origin: 'http://localhost:3000',
@@ -32,6 +33,8 @@ app.get("/api/comment", (req, res) => {
         res.json(comments);
     });
 });
+
+//Получить все занятия
 app.get("/api/classes", (req, res) => {
     fs.readFile(CLASSES_DB_PATH, "utf8", (err, data) => {
         if (err) {
@@ -47,7 +50,6 @@ app.get("/api/classes", (req, res) => {
 //Добавить нового пользователя
 // const usersFilePath = path.join(__dirname, "./db/db.users.json");
 app.post("/api/users", (req, res) => {
-    console.log('11111!!!!');
     fs.readFile(
         path.join(__dirname, "./db/db.users.json"),
         "utf8",
@@ -60,8 +62,8 @@ app.post("/api/users", (req, res) => {
             const users = JSON.parse(data).users;
             const newUser = {
                 id: users.length + 1,
-                firstName: req.body.name,
-                lastName: req.body.name,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
                 email: req.body.email,
                 password: req.body.password,
                 phone: req.body.phone,
@@ -82,4 +84,17 @@ app.post("/api/users", (req, res) => {
             );
         },
     );
+});
+ //Получить всех пользователей
+
+app.get("/api/users", (req, res) => {
+    fs.readFile(USERS_DB_PATH, "utf8", (err, data) => {
+        if (err) {
+            console.error("Ошибка чтения файла:", err);
+            res.status(500).send("Ошибка сервера");
+            return;
+        }
+        const users = JSON.parse(data).users;
+        res.json(users);
+    });
 });

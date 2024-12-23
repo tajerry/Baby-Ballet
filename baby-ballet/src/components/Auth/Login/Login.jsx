@@ -1,27 +1,32 @@
 import { Grid } from "@mui/material";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import { Button, Form, Input } from "antd";
 import {useNavigate} from "react-router-dom";
 import {UserContext} from "../../Context/UserContextProvider";
+import {useGetAllUsersQuery} from "../../../store/services/usersApi";
 function Login() {
-    let {user, setUser }  = useContext(UserContext);
+    let {contextUser, setUser }  = useContext(UserContext);
+    const{data:users} = useGetAllUsersQuery();
     const navigate = useNavigate();
+    console.log(users);
   const login = (value) => {
-      if(value.password === user.password && value.email === user.email){
-          setUser({
-              firstName: user.firstName,
-              lastName: user.lastName,
-              email: value.email,
-              isAuth: true,
-              password: value.password,
-              phone: user.phone
+      users.map((user) => {
 
-          });
-          navigate('/user')
-      }
-      else {
-          alert("Вы ввели неправильный пароль!")
-      }
+          if(value.password === user.password && value.email === user.email){
+              console.log(true)
+              setUser({
+                  firstName: user.firstName,
+                  lastName: user.lastName,
+                  email: value.email,
+                  isAuth: true,
+                  password: value.password,
+                  phone: user.phone
+
+              });
+              console.log(contextUser)
+              navigate('/user')
+          }
+      })
 
   };
   return (

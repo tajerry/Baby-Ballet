@@ -4,7 +4,7 @@ import {useContext, useEffect, useState} from "react";
 import {UserContext} from "../Context/UserContextProvider";
 import {useNavigate} from "react-router-dom";
 export function Header() {
-  let {user, setUser }  = useContext(UserContext);
+  let {contextUser, setUser }  = useContext(UserContext);
   const navigate = useNavigate();
   const logOff = () => {
     setUser({
@@ -37,7 +37,7 @@ export function Header() {
           Контакты
         </NavLink>
       </div>
-        {!user.isAuth && (
+        {!contextUser.isAuth && (
             <div className="auth">
                 <NavLink className="header__authLink" to={"/login"}>
                     Вход
@@ -47,10 +47,10 @@ export function Header() {
                 </NavLink>
             </div>
         )}
-        {user.isAuth && (
+        {contextUser.isAuth && (
             <div className="auth">
                 <NavLink className="header__authLink" to={"/user"}>
-                    {user.firstName}
+                    {contextUser.firstName}
                 </NavLink>
                 <NavLink className="header__authLink" to={'/login'} onClick={logOff}>
                     Выход
